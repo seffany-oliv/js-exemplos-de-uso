@@ -48,9 +48,42 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
+    let timerElement = document.getElementById('timer');
+    let startButton = document.getElementById('startButton');
+    let pauseButton = document.getElementById('pauseButton');
+    let resetButton = document.getElementById('resetButton');
 
+    let count = 0;
+    let interval;
 
-    // 1ª Digitação (Resolva aqui o exercício)
+    // Função para iniciar o temporizador
+    function startTimer() {
+      if (!interval) {
+        interval = setInterval(() => {
+          count++;
+          timerElement.textContent = count;
+        }, 1000);
+      }
+    }
+
+    // Função para pausar o temporizador
+    function pauseTimer() {
+      clearInterval(interval);
+      interval = null;
+    }
+
+    // Função para resetar o temporizador
+    function resetTimer() {
+      clearInterval(interval);
+      interval = null;
+      count = 0;
+      timerElement.textContent = count;
+    }
+
+    // Adicionando event listeners aos botões
+    startButton.addEventListener('click', startTimer);
+    pauseButton.addEventListener('click', pauseTimer);
+    resetButton.addEventListener('click', resetTimer);
 
 
   </script>
