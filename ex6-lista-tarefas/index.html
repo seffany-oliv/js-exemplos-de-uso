@@ -24,31 +24,36 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
-    // Seleciona os elementos do DOM
+  
+  // Seleciona os elementos do DOM
+  const taksInput = document.querySelector('#taskInput');//campo de texto
+  const addButton = document.querySelector('#addButton');//Campo de botão adicionar
+  const taskList = document.querySelector('#taskList');//Lista de tarefas
 
-    // 1ª Digitação (Aqui)
-
-    // Adiciona um evento de clique ao botão "Adicionar"
-    // addButton.addEventListener('click', () => {
-      // Obtém o texto da tarefa e remove espaços em branco no início e no fim
+  // Adiciona um evento de clique ao botão "Adicionar"
+    addButton.addEventListener('click', () => {
+    // Obtém o texto da tarefa e remove espaços em branco no início e no fim
+    const taskText = taksInput.value.trim();
       
-
-      // Verifica se o texto não está vazio
+    // Verifica se o texto não está vazio
+    if (taskText !== '') {
       
         // Cria um novo item de lista (<li>)
-        
-           // Define o texto da tarefa
+          const li = document.createElement('li');
+          li.textContent = taskText;// mandar o texto do input para li// Define o texto da tarefa
 
         // Adiciona um evento de clique ao item da lista para marcar/desmarcar como concluído
-        // li.addEventListener('click', () => {
-            // Alterna a classe 'completed'
+          li.addEventListener('click', () => {
+            li.classList.toggle('completed');// Alterna a classe 'completed'
+        });
        
-
         // Adiciona o item à lista de tarefas
-       
+        taskList.appendChild(li);
 
         // Limpa o campo de entrada
-        
+        taksInput.value = '';
+    }
+  });
 
   </script>
 </body>
