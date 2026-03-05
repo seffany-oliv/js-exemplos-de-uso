@@ -67,11 +67,29 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
+  const subText = document.getElementById('subText')
+  const myImage = document.getElementById('myImage')
 
+  //Troca de imagem quando omouse pousa
+  myImage.addEventListener('mouseenter', () => {
+  myImage.src = "image2.png";
+  //Alterando o texto apos o mouse pousar em cima
+  subText.textContent = 'Doja catzinha';
+});
 
-    // 1ª Digitação (Resolva aqui o exercício)
+  //Alterando a imagem quando o mouse sair
+  myImage.addEventListener('mouseleave', () => {
+  myImage.src = "image.png";
+  //Altera o texto quando o mouse sai
+  subText.textContent = 'Sabrina Carpenter - Linda!';
+});
 
+</script>
+</body>
+</html>
 
+</body>
+</html>
   </script>
 </body>
 </html>

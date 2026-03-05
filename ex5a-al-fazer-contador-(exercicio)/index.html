@@ -1,1 +1,51 @@
- <!-- 1ª Digitação (Resolva aqui o exercício) -->
+<!-- 1ª Digitação (Resolva aqui o exercício) -->
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <style>
+    
+    p{
+        background-color: rgb(255, 255, 255);
+        height:200px;
+        color:rgb(45, 45, 42);
+        font-size: 100px;
+        font-family: "Bebas Neue", sans-serif;
+         
+    }
+  </style>
+  <body>
+    
+    <button id="button">Clique aqui</button>
+
+    <p id="contador">Cliques: 0 </p>
+
+  </body>
+  </html>
+
+  <script>
+    const button = document.getElementById('button')
+    const p = document.getElementById("contador")
+    let contagem = 0
+
+
+    button.addEventListener('click', () =>{
+        contagem++;
+        p.textContent = "Cliques: " + contagem;
+      
+
+   if (contagem % 2 === 0 ) {
+    p.style.backgroundColor = "green";
+
+   } else{ 
+    p.style.backgroundColor = "red";
+}    
+    });
+  </script>
